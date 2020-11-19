@@ -13,7 +13,7 @@ namespace PuppeteerSharp
         public static async Task Main(string[] args)
         {
             var currentDirectory = Directory.GetCurrentDirectory();
-            var downloadPath = Path.Combine(currentDirectory, "..", "..", "CustomChromium");
+            var downloadPath = Path.Combine(currentDirectory, "CustomChromium");
             Console.WriteLine($"Attemping to set up puppeteer to use Chromium found under directory {downloadPath} ");
 
             if (!Directory.Exists(downloadPath))
@@ -48,10 +48,7 @@ namespace PuppeteerSharp
                 await page.SetViewportAsync(new ViewPortOptions { Width = 1920, Height = 1080 });
                 
                 var waitUntil = new NavigationOptions { Timeout = 0, WaitUntil = new[] { WaitUntilNavigation.Networkidle0 } };
-                string link = null;
-                Console.WriteLine("Input Link to capture screenshot: ",link);
-                link = Console.ReadLine();
-                string url = link;
+                string url = "https://github.com/puppeteer/puppeteer/issues/1345";
                 await page.GoToAsync(url,waitUntil);
 
                 #region Screenshot Dashboard:
@@ -60,13 +57,15 @@ namespace PuppeteerSharp
                 var savePath = Path.Combine(currentDirectory, "Capture");
                 if (!Directory.Exists(savePath))
                 {
-                    Console.WriteLine("Custom directory not found. Creating directory");
+                    Console.WriteLine("SavePath directory not found. Creating directory");
                     Directory.CreateDirectory(savePath);
                 }
-                var outputfile = savePath + "\\capture.png";
+                string date = DateTime.Now.ToString("yyyyMMddHHmmss");
+                var outputfile = savePath + "/capture_"+date+".png";
                 await page.ScreenshotAsync(outputfile, optionsScreenShot);
+                Console.WriteLine("Capture completed! Path: " + outputfile, ConsoleColor.Green);
                 #endregion
-
+                
                 await page.CloseAsync();
             }
             return;
