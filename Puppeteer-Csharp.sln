@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Puppeteer-Csharp", "Puppeteer-Csharp\Puppeteer-Csharp.csproj", "{EB83C536-282D-4DF5-AC3D-A2698023AA00}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB83C536-282D-4DF5-AC3D-A2698023AA00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB83C536-282D-4DF5-AC3D-A2698023AA00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB83C536-282D-4DF5-AC3D-A2698023AA00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB83C536-282D-4DF5-AC3D-A2698023AA00}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2BE9B988-CABC-4201-B242-2417D58AAB1F}
+	EndGlobalSection
+EndGlobal
